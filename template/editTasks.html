@@ -1,0 +1,15 @@
+{% extends 'tasksBase.html' %}
+{% block header %}
+<h1>{% block title %}Edit tasks{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<form id="editTasksForm" >
+	<p>description</p>
+	<input type="hidden" name="id" value="{{ task.id }}">
+	<input type="text" name="desc">
+	<p>due date( in the form of dd-mm)</p>
+	<input type="text" name="dueDays">
+	<button type="submit" onclick="editTask()">Submit</button>
+</form>>
+
+{% endblock %}

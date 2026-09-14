@@ -1,24 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'tasksBase.html' %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link href="../static/style.css" rel="stylesheet">
-	<script src="../static/script.js"></script>
-</head>
+{% block content %}
+<h1 id="username"></h1>
+<h2>Tasks</h2>
 
-<body>
-	<h1 id="username"></h1>
-	<p>teh task </p>
 
-	<script>
-		let username = sessionStorage.getItem("username");
-		console.log(username);
-		const h1 = document.querySelector("#username");
-		h1.textContent = username;
-	</script>
-</body>
 
-</html>
+<table>
+	<tr>
+		<th>Tasks</th>
+		<th>Due date</th>
+	</tr>
+	{% for task in tasks %}
+	<tr>>
+		<td>{{ task.desc }}</td>
+		<td>{{ task.dueDays }} </td>
+		<td> <button onclick="deleteTask({{ task.id }})">delete this task</button></td>
+		<td> <a href="/edit/{{ task.id }}">edit tasks</a></td>
+	</tr>
+</table>
+{% else %}
+<p style="color: red;">No tasks found, add one</p>
+{% endfor %}
+<a href="/add">add Tasks</a>
+
+<script>
+	let username = sessionStorage.getItem("username");
+	console.log(username);
+	const h1 = document.querySelector("#username");
+	h1.textContent = username;
+</script>
+{% endblock %}

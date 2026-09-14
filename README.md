@@ -7,8 +7,12 @@ this is a simple full statck todo app
 i juse use Flask to make database with 2 table (user, task) and set route with each html
 
 
-# FETURES
+# TODOS 
 - [ ] styling (done by frined hopely) 
-- [ ] form for tasks ( add, edit and remove)
+- [x] form for tasks ( add, edit and remove)
 - [ ] groupe html file togehter (too man forms) ( optioanl)
+- [ ] set username to be unique ( no duplicate)
 
+
+# note:
+for some reason, the edit tasks for my browser block the fetch api. it works on lates chromium so just use another browser if yours doesn work. or use another profile

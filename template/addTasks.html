@@ -1,0 +1,13 @@
+{% extends 'tasksBase.html' %}
+{% block header %}
+<h1>{% block title %}Add tasks{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<form id="addTasksForm" >
+	<p>description</p>
+	<input type="text" name="desc">
+	<p>due date( in the form of dd-mm)</p>
+	<input type="text" name="date">
+	<button type="button" onclick="addTasks()">Submit</button>
+</form>>
+{% endblock %}
